@@ -21,7 +21,9 @@ Then you can call template.py from bash or any other script language in your ent
 ```
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 template () {
-    python3 $DIR/template.py --template $DIR/superawesome.conf.j2 --output /etc/superawesome/superawesome.conf
+    arg1=$1
+    arg2=$2
+    python3 $DIR/template.py --template $1 --output $2
 }
-template
+template $DIR/superawesome.conf.j2 /etc/superawesome/superawesome.conf
 ```
